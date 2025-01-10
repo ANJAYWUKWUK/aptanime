@@ -1,0 +1,43 @@
+<!-- aptanimelistweb/templates/aptanimelistweb/home.html -->
+{% extends 'base_home.html' %}
+{% load custom_filters %}
+
+{%block content %}  
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+
+
+
+
+<div class="head">
+    <h1>AptanimeList</h1>
+    </div>
+    
+
+    <!-- card box -->
+    <div class="container">
+        <div class="col-12"> 
+            <div class="d-flex flex-wrap">
+                {% for list in list %}
+                    <div class="col-md-4">
+                        <div class="card shadow m-3">
+                            <!-- Add custom styling to control image size -->
+                            <img src="/media/{{ list.gambar }}" class="card-img-top img-fluid" style="max-height: 200px;" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{list.judul}}</h5>
+                                <p class="card-text">{{ list.detail }}...</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    
+   
+    {% endblock %}
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">

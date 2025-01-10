@@ -1,0 +1,96 @@
+<!-- templates/registration/register.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="path/to/your/custom/style.css">
+    <!-- Add any other necessary CSS or external libraries here -->
+</head>
+<body>
+
+<div class="container">
+    <div class="registration-container">
+        <div class="registration-card">
+            <div class="registration-header">
+                <h1 class="text-center">Registration</h1>
+            </div>
+            <div class="registration-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<style>
+  /* path/to/your/custom/style.css */
+
+body {
+    background-color: #d18008f3; /* Warna latar belakang yang lembut */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration-container {
+    max-width: 400px;
+    width: 100%;
+}
+
+.registration-card {
+    background-color: #fff; /* Warna latar belakang putih untuk card */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan halus */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.registration-header {
+    background-color: #001F3F; /* Warna latar belakang gelap untuk header */
+    color: #fff; /* Warna teks putih */
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+.registration-header h1 {
+    margin: 0;
+}
+
+.registration-body {
+    padding: 20px;
+}
+
+.btn-primary {
+    background-color: #001F3F; /* Warna latar belakang gelap untuk tombol */
+    border-color: #6c757d;
+    color: #fff; /* Warna teks putih */
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #495057; /* Warna latar belakang yang lebih gelap saat hover */
+    border-color: #495057;
+}
+
+</style>
